@@ -108,12 +108,6 @@ const Contact = () => {
                     ))}
                 </div>
 
-                {/* Footer */}
-                <div className="mt-32 border-t border-white/10 pt-8 w-full text-center">
-                    <p className="text-white/40 font-body text-sm tracking-widest uppercase">
-                        © 2026 E-SUMMIT • ZENITH
-                    </p>
-                </div>
             </div>
         </section>
     );

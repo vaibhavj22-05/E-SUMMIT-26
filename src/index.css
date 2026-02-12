@@ -66,3 +66,15 @@ h6 {
 .text-shadow-glow {
   text-shadow: 0 0 10px currentColor;
 }
+
+/* Hide scrollbar globally */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
