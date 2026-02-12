@@ -154,8 +154,11 @@ const Events = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#1a0505] via-[#2b0a0a] to-[#1a0505] z-0" />
                 <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-10 mix-blend-overlay z-0" />
 
-                {/* Seamless Transition Overlay */}
-                <div className="absolute top-0 w-full h-32 bg-gradient-to-b from-[#1a0505] to-transparent z-20 pointer-events-none" />
+                {/* Seamless Transition Overlay - Top */}
+                <div className="absolute top-0 w-full h-64 bg-gradient-to-b from-[#1a0505] via-[#1a0505]/80 to-transparent z-20 pointer-events-none" />
+
+                {/* Seamless Transition Overlay - Bottom */}
+                <div className="absolute bottom-0 w-full h-64 bg-gradient-to-t from-[#1a0505] via-[#1a0505]/80 to-transparent z-20 pointer-events-none" />
 
                 {/* Ambient Glows */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">

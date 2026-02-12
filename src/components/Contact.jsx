@@ -1,62 +1,118 @@
 import React from 'react';
-import { Phone, Mail, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Linkedin, Twitter } from 'lucide-react';
 
 const Contact = () => {
     const team = [
-        { name: "Aarav Sharma", role: "President", email: "aarav@example.com" },
-        { name: "Ishita Verma", role: "Vice President", email: "ishita@example.com" },
-        { name: "Rohan Gupta", role: "Tech Lead", email: "rohan@example.com" },
-        { name: "Sneha Patel", role: "Creative Head", email: "sneha@example.com" }
+        { name: "Ishita Agrawal", role: "Registrations & Correspondence", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Ishita" },
+        { name: "Rahul Gupta", role: "Website, App & Payments", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Rahul" },
+        { name: "Arshita Mittal", role: "Reception & Accommodation", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Arshita" },
+        { name: "Pranav Deshpande", role: "Online Collaborations & Publicity", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Pranav" },
+        { name: "Dhruv Maniar", role: "Sponsorships & Collaborations", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Dhruv" },
+        { name: "Ayushmaan Kumar", role: "Logistics & Operations", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Ayushmaan" },
+        { name: "Sajal Yadav", role: "President, Students' Union", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Sajal" },
+        { name: "Aditya Khandelwal", role: "Gen. Secretary, Students' Union", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Aditya" }
     ];
 
     return (
-        <section id="contact" className="py-24 px-6 bg-black relative">
-            <div className="max-w-7xl mx-auto">
-                <h2 className="text-center text-5xl md:text-7xl font-display text-white mb-20 animate-fade-in-up">
-                    GET IN TOUCH
-                </h2>
+        <section id="contact" className="relative min-h-screen py-32 overflow-hidden bg-[#1a0505]">
+            {/* 1. Continuity: Top Gradient to merge with dark previous section */}
+            <div className="absolute top-0 w-full h-64 bg-gradient-to-b from-[#1a0505] via-[#1a0505]/80 to-transparent z-20 pointer-events-none" />
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
-                    {team.map((member, i) => (
-                        <div
-                            key={i}
-                            className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-retro-primary/50 transition-colors group hover:-translate-y-2 duration-300"
-                        >
-                            <div className="w-20 h-20 bg-retro-secondary rounded-full mb-6 mx-auto blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                            <div className="text-center -mt-16 relative z-10">
-                                <h3 className="text-2xl font-display text-white tracking-wide">{member.name}</h3>
-                                <p className="text-retro-primary font-retro text-sm mb-4">{member.role}</p>
-                                <div className="flex justify-center gap-4 text-gray-400">
-                                    <Mail size={18} className="hover:text-white cursor-pointer" />
-                                    <Phone size={18} className="hover:text-white cursor-pointer" />
-                                    <Linkedin size={18} className="hover:text-white cursor-pointer" />
+            {/* 2. Cyber/Tech Background Pattern */}
+            <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-10 mix-blend-overlay z-0" />
+
+            {/* Digital Grid Background */}
+            <div className="absolute inset-0 pointer-events-none opacity-20"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(to right, #ff4d00 1px, transparent 1px),
+                        linear-gradient(to bottom, #ff4d00 1px, transparent 1px)
+                    `,
+                    backgroundSize: '40px 40px',
+                    maskImage: 'radial-gradient(circle at center, black 40%, transparent 80%)'
+                }}
+            />
+
+            {/* Ambient Glows */}
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-retro-purple/20 rounded-full blur-[120px] mix-blend-screen animate-pulse pointer-events-none" />
+            <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-retro-primary/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
+
+            <div className="max-w-[1400px] mx-auto px-6 relative z-30 flex flex-col items-center">
+
+                {/* 3. Header Banner (Dark Sci-Fi Style) */}
+                <div className="relative mb-32 group">
+                    <div className="relative z-10">
+                        <h2 className="text-5xl md:text-8xl font-display text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/80 tracking-widest drop-shadow-[0_0_35px_rgba(255,255,255,0.4)]">
+                            CONTACT US
+                        </h2>
+                        {/* Underline Glitch Effect */}
+                        <div className="absolute -bottom-4 left-0 w-full h-1 bg-retro-primary/50 rounded-full overflow-hidden">
+                            <div className="absolute inset-0 bg-retro-accent w-1/3 animate-[shimmer_2s_infinite]" />
+                        </div>
+                    </div>
+                    {/* Background Glow */}
+                    <div className="absolute inset-0 bg-retro-primary/20 blur-[50px] -z-10 opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
+                </div>
+
+                {/* 4. Hanging/Floating Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-24 gap-x-8 w-full px-4 md:px-12">
+                    {team.map((member, index) => (
+                        <div key={index} className="flex flex-col items-center relative group">
+
+                            {/* The 'String' - Now a Laser Line */}
+                            <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1px] h-32 bg-gradient-to-b from-transparent via-retro-primary/50 to-retro-primary z-0 group-hover:h-36 transition-all duration-500" />
+
+                            {/* The 'Pin' - Glowing Node */}
+                            <div className="absolute -top-[8rem] left-1/2 -translate-x-1/2 w-2 h-2 bg-retro-accent rounded-full z-10 shadow-[0_0_10px_#ffd700]" />
+
+                            {/* The Digital Card */}
+                            <div
+                                className="relative w-full aspect-[4/3] p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md flex flex-col items-center text-center transform transition-all duration-500 hover:-translate-y-2 hover:border-retro-primary/50 hover:shadow-[0_0_30px_rgba(255,77,0,0.2)] group-hover:bg-[#1a0505]/80"
+                            >
+                                {/* Holographic Sheen */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                {/* Avatar */}
+                                <div className="relative w-24 h-24 mb-4 mt-2">
+                                    <div className="absolute inset-0 bg-retro-primary/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/20 group-hover:border-retro-primary transition-colors duration-300 bg-black/40">
+                                        <img
+                                            src={member.img}
+                                            alt={member.name}
+                                            className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                                        />
+                                    </div>
                                 </div>
+
+                                {/* Content */}
+                                <div className="flex-1 flex flex-col justify-center relative z-10">
+                                    <h3 className="text-xl md:text-2xl font-display text-white mb-2 tracking-wide">{member.name}</h3>
+                                    <p className="text-xs md:text-sm font-body text-gray-400 font-light uppercase tracking-wider group-hover:text-retro-accent transition-colors">
+                                        {member.role}
+                                    </p>
+                                </div>
+
+                                {/* Social Actions */}
+                                <div className="mt-4 flex gap-4 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                                    <Mail className="w-5 h-5 text-white hover:text-retro-primary cursor-pointer transition-colors" />
+                                    <Linkedin className="w-5 h-5 text-white hover:text-retro-primary cursor-pointer transition-colors" />
+                                </div>
+
+                                {/* Corner Accents */}
+                                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/30 rounded-tl-lg" />
+                                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/30 rounded-tr-lg" />
+                                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/30 rounded-bl-lg" />
+                                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/30 rounded-br-lg" />
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <footer className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="text-center md:text-left">
-                        <h4 className="text-3xl font-display text-white mb-2">E-SUMMIT 2026</h4>
-                        <p className="text-gray-500 text-sm">MAIT | Communite × EDC</p>
-                    </div>
-
-                    <div className="flex gap-8">
-                        <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-retro-primary hover:text-white transition-all text-gray-400">
-                            <Instagram size={24} />
-                        </a>
-                        <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-retro-primary hover:text-white transition-all text-gray-400">
-                            <Linkedin size={24} />
-                        </a>
-                        <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-retro-primary hover:text-white transition-all text-gray-400">
-                            <Mail size={24} />
-                        </a>
-                    </div>
-                </footer>
-
-                <div className="text-center mt-12 text-gray-600 text-xs font-retro">
-                    MADE WITH PASSION BY MAIT E-SUMMIT TEAM
+                {/* Footer */}
+                <div className="mt-32 border-t border-white/10 pt-8 w-full text-center">
+                    <p className="text-white/40 font-body text-sm tracking-widest uppercase">
+                        © 2026 E-SUMMIT • ZENITH
+                    </p>
                 </div>
             </div>
         </section>
