@@ -35,7 +35,7 @@ const Hero = () => {
     return (
         <section
             ref={containerRef}
-            onMouseMove={handleMouseMove}
+            // onMouseMove={handleMouseMove}
             className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#1a0505] perspective-1000"
         >
             {/* 1. Dynamic Background Layer */}

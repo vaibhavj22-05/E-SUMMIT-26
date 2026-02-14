@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Events from './components/Events';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import LazyLoadSection from './components/LazyLoadSection';
+
+// Lazy Load Heavy Components
+const About = lazy(() => import('./components/About'));
+const Events = lazy(() => import('./components/Events'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+
+// Loading Fallback
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center h-screen bg-black text-white">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-retro-primary"></div>
+  </div>
+);
 
 function App() {
   return (
@@ -14,10 +24,24 @@ function App() {
 
       <Navbar />
       <Hero />
-      <About />
-      <Events />
-      <Contact />
-      <Footer />
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <LazyLoadSection placeholderHeight="100vh">
+          <About />
+        </LazyLoadSection>
+
+        <LazyLoadSection placeholderHeight="400vh">
+          <Events />
+        </LazyLoadSection>
+
+        <LazyLoadSection placeholderHeight="100vh">
+          <Contact />
+        </LazyLoadSection>
+
+        <LazyLoadSection placeholderHeight="400px">
+          <Footer />
+        </LazyLoadSection>
+      </Suspense>
     </div>
   );
 }
