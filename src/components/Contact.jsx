@@ -3,14 +3,14 @@ import { Mail, Linkedin, Twitter } from 'lucide-react';
 
 const Contact = () => {
     const team = [
-        { name: "Ishita Agrawal", role: "Registrations & Correspondence", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Ishita" },
-        { name: "Rahul Gupta", role: "Website, App & Payments", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Rahul" },
-        { name: "Arshita Mittal", role: "Reception & Accommodation", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Arshita" },
-        { name: "Pranav Deshpande", role: "Online Collaborations & Publicity", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Pranav" },
-        { name: "Dhruv Maniar", role: "Sponsorships & Collaborations", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Dhruv" },
-        { name: "Ayushmaan Kumar", role: "Logistics & Operations", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Ayushmaan" },
-        { name: "Sajal Yadav", role: "President, Students' Union", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Sajal" },
-        { name: "Aditya Khandelwal", role: "Gen. Secretary, Students' Union", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Aditya" }
+        { name: "Vishrut Gupta", role: "Operations Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Ishita" },
+        { name: "Chehak Trehan", role: "R&D Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Rahul" },
+        { name: "Yug Raheja", role: "R&D Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Arshita" },
+        { name: "Aryan Kumar", role: "Content Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Pranav" },
+        { name: "Arlin Jain", role: "President", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Dhruv" },
+        { name: "Neel Chugh", role: "Vice-President", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Ayushmaan" },
+        { name: "Dia Gandhi", role: "General Secretary", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Sajal" },
+        { name: "Parth Udar", role: "Joint Secretary", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Aditya" }
     ];
 
     return (
