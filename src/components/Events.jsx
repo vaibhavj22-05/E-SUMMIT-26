@@ -217,31 +217,31 @@ const Events = () => {
 
     const events = [
         {
-            title: "HACKATHON",
-            desc: "24h of pure code & chaos.",
-            fullDesc: "Unleash your coding prowess in this grueling 24-hour marathon. Build innovative solutions to real-world problems under intense time pressure.",
+            title: "TRADING ALGO",
+            desc: "Algorithmic Trading Competition",
+            fullDesc: "Participants design and implement an algorithm that automatically executes trades in financial markets based on predefined logic",
             color: "from-retro-purple to-indigo-900",
             prize: "₹50,000",
             teamSize: "3-4 Members",
-            rules: ["Code must be written entirely during the event.", "Pre-built libraries are allowed, but no pre-built projects.", "Teams must present their final prototype to judges."]
+            EvaluationCriteria: ["Profitability", "Risk-adjusted returns", "Robustness of strategy", "Code efficiency and logic"]
         },
         {
-            title: "SHARK TANK",
-            desc: "Pitch your ideas to investors.",
-            fullDesc: "Got a billion-dollar idea? Step into the tank and face potential investors. Convince them that your startup is the next big thing.",
+            title: "REBRANDING",
+            desc: "Company Transformation & Pitch",
+            fullDesc: "You’re given an existing company (often outdated or struggling) and must redesign its identity and reposition it in the market",
             color: "from-retro-primary to-rose-900",
             prize: "Funding + ₹30,000",
             teamSize: "1-3 Members",
-            rules: ["Pitch deck must be under 10 slides.", "5 minutes for pitch, 5 minutes for Q&A.", "Prototypes or MVPs are highly encouraged."]
+            EvaluationCriteria: ["Creativity + practicality", "Market research logic", "Strategic alignment", "Persuasiveness of pitch"]
         },
         {
-            title: "IPL AUCTION",
-            desc: "Build your dream team.",
-            fullDesc: "Experience the thrill of the auction room. Manage your budget, bid strategically, and assemble the strongest cricket team.",
+            title: "HI-TABLE COMPETITION",
+            desc: "High Table / Case Round Format",
+            fullDesc: "A high-pressure boardroom-style competition where teams present solutions to judges (acting as investors, CEOs, or board members",
             color: "from-retro-accent to-amber-900",
             prize: "₹20,000",
             teamSize: "2-3 Members",
-            rules: ["Each team starts with a fixed virtual budget.", "Unsold players go to the acceleration round.", "Team with the highest rating points wins."]
+            EvaluationCriteria: ["Depth of analysis", "Confidence & articulation", "Structured thinking", "Handling counter-questions"]
         },
         {
             title: "ESPORTS",
