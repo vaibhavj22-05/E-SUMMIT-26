@@ -1,16 +1,16 @@
 import React from 'react';
-import { Mail, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Linkedin, Phone } from 'lucide-react';
 
 const Contact = () => {
     const team = [
-        { name: "Vishrut Gupta", role: "Operations Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Ishita" },
-        { name: "Chehak Trehan", role: "R&D Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Rahul" },
-        { name: "Yug Raheja", role: "R&D Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Arshita" },
-        { name: "Aryan Kumar", role: "Content Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Pranav" },
-        { name: "Arlin Jain", role: "President", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Dhruv" },
-        { name: "Neel Chugh", role: "Vice-President", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Ayushmaan" },
-        { name: "Dia Gandhi", role: "General Secretary", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Sajal" },
-        { name: "Parth Udar", role: "Joint Secretary", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Aditya" }
+        { name: "Vishrut Gupta", role: "Operations Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Ishita", linkedin: "#", email: "mailto:vishrut@esummit.in", phone: "tel:+919876543210" },
+        { name: "Chehak Trehan", role: "R&D Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Rahul", linkedin: "#", email: "mailto:chehak@esummit.in", phone: "tel:+919876543211" },
+        { name: "Yug Raheja", role: "R&D Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Arshita", linkedin: "#", email: "mailto:yug@esummit.in", phone: "tel:+919876543212" },
+        { name: "Aryan Kumar", role: "Content Head", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Pranav", linkedin: "#", email: "mailto:aryan@esummit.in", phone: "tel:+919876543213" },
+        { name: "Arlin Jain", role: "President", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Dhruv", linkedin: "#", email: "mailto:arlin@esummit.in", phone: "tel:+919876543214" },
+        { name: "Neel Chugh", role: "Vice-President", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Ayushmaan", linkedin: "#", email: "mailto:neel@esummit.in", phone: "tel:+919876543215" },
+        { name: "Dia Gandhi", role: "General Secretary", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Sajal", linkedin: "#", email: "mailto:dia@esummit.in", phone: "tel:+919876543216" },
+        { name: "Parth Udar", role: "Joint Secretary", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Aditya", linkedin: "#", email: "mailto:parth@esummit.in", phone: "tel:+919876543217" }
     ];
 
     return (
@@ -93,9 +93,16 @@ const Contact = () => {
                                 </div>
 
                                 {/* Social Actions */}
-                                <div className="mt-4 flex gap-4 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
-                                    <Mail className="w-5 h-5 text-white hover:text-retro-primary cursor-pointer transition-colors" />
-                                    <Linkedin className="w-5 h-5 text-white hover:text-retro-primary cursor-pointer transition-colors" />
+                                <div className="mt-4 flex gap-4 opacity-70 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                                    <a href={member.email} className="p-2 hover:bg-white/10 rounded-full transition-colors group/icon">
+                                        <Mail className="w-5 h-5 text-white group-hover/icon:text-retro-primary transition-colors" />
+                                    </a>
+                                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-full transition-colors group/icon">
+                                        <Linkedin className="w-5 h-5 text-white group-hover/icon:text-retro-primary transition-colors" />
+                                    </a>
+                                    <a href={member.phone} className="p-2 hover:bg-white/10 rounded-full transition-colors group/icon">
+                                        <Phone className="w-5 h-5 text-white group-hover/icon:text-retro-primary transition-colors" />
+                                    </a>
                                 </div>
 
                                 {/* Corner Accents */}
