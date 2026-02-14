@@ -1,22 +1,38 @@
-import React, { Suspense, lazy } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+// Import components directly to ensure they are available for scrolling/routing
+import About from './components/About';
 import Events from './components/Events';
-import LazyLoadSection from './components/LazyLoadSection';
-
-// Lazy Load Heavy Components
-const About = lazy(() => import('./components/About'));
-const Contact = lazy(() => import('./components/Contact'));
-const Footer = lazy(() => import('./components/Footer'));
-
-// Loading Fallback
-const LoadingSpinner = () => (
-  <div className="flex items-center justify-center h-screen bg-black text-white">
-    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-retro-primary"></div>
-  </div>
-);
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
+  // Handle URL "Routing" to sections
+  useEffect(() => {
+    // Small delay to ensure DOM is ready and layout is stable
+    const timer = setTimeout(() => {
+      const path = window.location.pathname;
+      const hash = window.location.hash;
+
+      let targetId = '';
+
+      if (path === '/contact') targetId = 'contact';
+      else if (path === '/about') targetId = 'about';
+      else if (path === '/events') targetId = 'events';
+      else if (hash) targetId = hash.replace('#', '');
+
+      if (targetId) {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 100); // 100ms delay
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="relative bg-black min-h-screen text-white font-body selection:bg-retro-primary selection:text-white pt-14 md:pt-0">
       {/* Global Grain Overlay */}
@@ -24,24 +40,10 @@ function App() {
 
       <Navbar />
       <Hero />
-
-      <Suspense fallback={<LoadingSpinner />}>
-        <LazyLoadSection placeholderHeight="100vh">
-          <About />
-        </LazyLoadSection>
-
-
-        <Events />
-
-
-        <LazyLoadSection placeholderHeight="100vh">
-          <Contact />
-        </LazyLoadSection>
-
-        <LazyLoadSection placeholderHeight="400px">
-          <Footer />
-        </LazyLoadSection>
-      </Suspense>
+      <About />
+      <Events />
+      <Contact />
+      <Footer />
     </div>
   );
 }

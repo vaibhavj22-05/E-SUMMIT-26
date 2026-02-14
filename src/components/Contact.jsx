@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Linkedin, Phone } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
     const team = [
@@ -12,6 +13,28 @@ const Contact = () => {
         { name: "Dia Gandhi", role: "General Secretary", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Sajal", linkedin: "https://www.linkedin.com/in/dia-gandhi-21078b365?utm_source=share_via&utm_content=profile&utm_medium=member_ios", email: "mailto:dia@esummit.in", phone: "tel:+91 83830 41430" },
         { name: "Parth Udar", role: "Joint Secretary", img: "https://api.dicebear.com/7.x/notionists/svg?seed=Aditya", linkedin: "https://www.linkedin.com/in/parth-udar-b34020298?utm_source=share_via&utm_content=profile&utm_medium=member_android", email: "mailto:parth@esummit.in", phone: "tel:+91 96677 74204" }
     ];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.15 }
+        }
+    };
+
+    const cardVariants = {
+        hidden: (index) => ({
+            opacity: 0,
+            x: index % 2 === 0 ? -100 : 100, // Even from Left, Odd from Right
+            y: 50
+        }),
+        visible: {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            transition: { type: "spring", stiffness: 40, damping: 15 }
+        }
+    };
 
     return (
         <section id="contact" className="relative min-h-screen py-32 overflow-hidden bg-[#1a0505]">
@@ -39,8 +62,14 @@ const Contact = () => {
 
             <div className="max-w-[1400px] mx-auto px-6 relative z-30 flex flex-col items-center">
 
-                {/* 3. Header Banner (Dark Sci-Fi Style) */}
-                <div className="relative mb-32 group">
+                {/* 3. Header Banner - Coming from DOWN to UP */}
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="relative mb-32 group"
+                >
                     <div className="relative z-10">
                         <h2 className="text-4xl sm:text-5xl md:text-8xl font-display text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/80 tracking-widest drop-shadow-[0_0_35px_rgba(255,255,255,0.4)]">
                             CONTACT US
@@ -52,12 +81,23 @@ const Contact = () => {
                     </div>
                     {/* Background Glow */}
                     <div className="absolute inset-0 bg-retro-primary/20 blur-[50px] -z-10 opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
-                </div>
+                </motion.div>
 
                 {/* 4. Hanging/Floating Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 sm:gap-y-24 gap-x-6 sm:gap-x-8 w-full px-2 sm:px-4 md:px-12">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 sm:gap-y-24 gap-x-6 sm:gap-x-8 w-full px-2 sm:px-4 md:px-12"
+                >
                     {team.map((member, index) => (
-                        <div key={index} className="flex flex-col items-center relative group">
+                        <motion.div
+                            key={index}
+                            custom={index}
+                            variants={cardVariants}
+                            className="flex flex-col items-center relative group"
+                        >
 
                             {/* The 'String' - Now a Laser Line */}
                             <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1px] h-32 bg-gradient-to-b from-transparent via-retro-primary/50 to-retro-primary z-0 group-hover:h-36 transition-all duration-500" />
@@ -111,9 +151,9 @@ const Contact = () => {
                                 <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/30 rounded-bl-lg" />
                                 <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/30 rounded-br-lg" />
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
             </div>
         </section>
