@@ -54,10 +54,17 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="absolute top-0 left-0 w-full z-50 py-8 pointer-events-none md:pointer-events-auto">
-            <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 pointer-events-auto">
-                {/* Left Side: Logo + Nav Links */}
-                <div className="flex items-center gap-12 pl-8 md:pl-16">
+        <nav className="fixed md:absolute top-0 left-0 w-full z-50 py-3 md:py-8 bg-gradient-to-b from-black/90 via-black/70 to-transparent backdrop-blur-md md:bg-transparent md:backdrop-blur-none border-b border-white/5 md:border-0 transition-colors duration-300">
+            <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+                {/* Left Side: Logo/Branding (Mobile) + Nav Links (Desktop) */}
+                <div className="flex items-center gap-4 md:gap-12 md:pl-16">
+                    {/* Mobile Logo/Branding */}
+                    <a href="#home" className="md:hidden">
+                        <h1 className="font-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-retro-primary to-retro-accent tracking-wider">
+                            E-SUMMIT
+                        </h1>
+                    </a>
+
                     {/* Desktop Menu */}
                     <div className="hidden md:flex gap-12">
                         {links.map((link) => (

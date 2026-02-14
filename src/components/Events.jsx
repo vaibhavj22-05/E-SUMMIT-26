@@ -64,12 +64,12 @@ const EventCard = ({ event, index, total, scrollYProgress }) => {
 
                         {/* Animated Text Block */}
                         <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-                            <h3 className="text-4xl md:text-5xl lg:text-6xl font-display text-white mb-3 leading-[0.9] drop-shadow-lg group-hover:text-retro-accent transition-colors">
+                            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display text-white mb-3 leading-[0.9] drop-shadow-lg group-hover:text-retro-accent transition-colors">
                                 {event.title}
                             </h3>
                             <div className="h-1 w-12 bg-retro-primary mb-4 rounded-full group-hover:w-20 group-hover:bg-retro-accent transition-all duration-500 ease-out" />
 
-                            <p className="text-lg font-body text-gray-300 line-clamp-2 leading-snug group-hover:text-white transition-colors">
+                            <p className="text-base sm:text-lg font-body text-gray-300 line-clamp-2 leading-snug group-hover:text-white transition-colors">
                                 {event.desc}
                             </p>
                         </div>
@@ -168,7 +168,7 @@ const Events = () => {
 
                 {/* Fixed Heading - Moved Outside for Visibility */}
                 <div className="absolute top-8 left-0 w-full text-center md:text-left md:left-12 z-50 pointer-events-none">
-                    <h2 className="text-5xl md:text-8xl font-display text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/60 uppercase tracking-widest select-none drop-shadow-[0_0_25px_rgba(255,255,255,0.3)]">EVENTS</h2>
+                    <h2 className="text-4xl sm:text-5xl md:text-8xl font-display text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/60 uppercase tracking-widest select-none drop-shadow-[0_0_25px_rgba(255,255,255,0.3)]">EVENTS</h2>
                 </div>
 
                 <div className="relative z-10 w-full h-full flex flex-col justify-center">

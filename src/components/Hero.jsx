@@ -36,7 +36,7 @@ const Hero = () => {
         <section
             ref={containerRef}
             // onMouseMove={handleMouseMove}
-            className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#1a0505] perspective-1000"
+            className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#1a0505] perspective-1000 pb-32 md:pb-0"
         >
             {/* 1. Dynamic Background Layer */}
             <motion.div
@@ -72,13 +72,13 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.8 }}
-                    className="flex items-center gap-4 mb-2"
+                    className="flex items-center gap-2 sm:gap-4 mb-2 px-4"
                 >
-                    <span className="h-[2px] w-8 bg-desi-gold/50"></span>
-                    <span className="font-body text-desi-gold text-sm md:text-base tracking-[0.4em] uppercase font-semibold">
+                    <span className="h-[2px] w-4 sm:w-8 bg-desi-gold/50"></span>
+                    <span className="font-body text-desi-gold text-xs sm:text-sm md:text-base tracking-[0.3em] sm:tracking-[0.4em] uppercase font-semibold">
                         MATES PRESENTS
                     </span>
-                    <span className="h-[2px] w-8 bg-desi-gold/50"></span>
+                    <span className="h-[2px] w-4 sm:w-8 bg-desi-gold/50"></span>
                 </motion.div>
 
                 {/* Massive 3D Main Title */}
@@ -88,7 +88,7 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                        className="font-western text-[5rem] md:text-[9rem] lg:text-[11rem] leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-[#4d1f1f] to-[#1a0505] absolute top-4 left-4 z-0 select-none blur-sm whitespace-nowrap"
+                        className="font-western text-[clamp(2.5rem,13vw,11rem)] md:text-[9rem] lg:text-[11rem] leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-[#4d1f1f] to-[#1a0505] absolute top-2 left-2 md:top-4 md:left-4 z-0 select-none blur-sm whitespace-nowrap px-4 sm:px-0 max-w-[100vw]"
                     >
                         E-SUMMIT'26
                     </motion.h1>
@@ -98,9 +98,9 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                        className="font-western text-[5rem] md:text-[9rem] lg:text-[11rem] leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-[#fff0d1] via-[#ffcc66] to-[#d4af37] z-10 relative drop-shadow-2xl whitespace-nowrap"
+                        className="font-western text-[clamp(2.5rem,13vw,11rem)] md:text-[9rem] lg:text-[11rem] leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-[#fff0d1] via-[#ffcc66] to-[#d4af37] z-10 relative drop-shadow-2xl whitespace-nowrap px-4 sm:px-0 max-w-[100vw]"
                     >
-                        E-SUMMIT<span className="font-serif text-[#ffd700] mx-[2px] inline-block -translate-y-4 md:-translate-y-8 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">’</span>26
+                        E-SUMMIT<span className="font-serif text-[#ffd700] mx-[0.1em] inline-block -translate-y-[10%] md:-translate-y-8 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">’</span>26
                     </motion.h1>
 
                     {/* Subtitle Below E-SUMMIT */}
@@ -108,25 +108,29 @@ const Hero = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
-                        className="mt-4 text-xl md:text-2xl font-oriental text-white/90 tracking-widest z-20"
+                        className="mt-4 md:mt-4 text-[0.8rem] sm:text-lg md:text-2xl font-oriental text-white/90 tracking-[0.15em] z-20 px-4 sm:px-0 text-center w-full"
                     >
                         EDC MAIT <span className="text-desi-gold">×</span> COMMUNITE
                     </motion.div>
                 </div>
 
                 {/* Animated Rotating Keyword Ring (Live Element) */}
-                <div className="relative mt-12 mb-12">
+                <div className="relative mt-6 mb-6 md:mt-12 md:mb-12">
                     <div className="absolute inset-0 bg-desi-marigold/20 blur-[40px] rounded-full"></div>
-                    <div className="relative overflow-hidden h-12 md:h-16 flex items-center">
+                    <div className="relative overflow-hidden h-8 sm:h-12 md:h-16 flex items-center w-full max-w-[95vw] mx-auto mask-linear-fade">
                         <motion.div
                             animate={{ x: [0, -1000] }}
                             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
                             className="flex gap-8 whitespace-nowrap"
                         >
-                            {[...Array(8)].map((_, i) => (
-                                <span key={i} className="text-2xl md:text-4xl font-oriental text-white/80 tracking-wide">
-                                    INNOVATE <span className="text-desi-gold">•</span> ELEVATE <span className="text-desi-gold">•</span> DOMINATE <span className="text-desi-gold">•</span>
-                                </span>
+                            {[...Array(4)].map((_, i) => (
+                                <React.Fragment key={i}>
+                                    {["DREAM", "DECIDE", "BUILD", "ELEVATE", "COMPETE", "CONQUER", "IMPACT"].map((word, index) => (
+                                        <span key={`${i}-${index}`} className="text-lg sm:text-2xl md:text-4xl font-oriental text-white/80 tracking-wide">
+                                            {word} <span className="text-desi-gold mx-2">•</span>
+                                        </span>
+                                    ))}
+                                </React.Fragment>
                             ))}
                         </motion.div>
                     </div>
@@ -144,33 +148,33 @@ const Hero = () => {
 
                     <div className="text-center flex flex-col items-center">
                         {/* Month with Ornamental Spacing */}
-                        <div className="flex items-center gap-4 mb-2">
-                            <span className="text-desi-gold text-2xl font-oriental">✦</span>
-                            <h2 className="font-oriental text-desi-gold text-2xl md:text-3xl tracking-[0.4em] uppercase drop-shadow-lg pl-[0.4em]">
+                        <div className="flex items-center gap-2 sm:gap-4 mb-2">
+                            <span className="text-desi-gold text-lg sm:text-2xl font-oriental">✦</span>
+                            <h2 className="font-oriental text-desi-gold text-lg sm:text-2xl md:text-3xl tracking-[0.3em] sm:tracking-[0.4em] uppercase drop-shadow-lg pl-[0.3em] sm:pl-[0.4em]">
                                 MARCH
                             </h2>
-                            <span className="text-desi-gold text-2xl font-oriental">✦</span>
+                            <span className="text-desi-gold text-lg sm:text-2xl font-oriental">✦</span>
                         </div>
 
                         {/* Dates in Massive Retro Type with Outlines */}
-                        <div className="flex items-end justify-center gap-6 md:gap-8 mt-2">
+                        <div className="flex items-end justify-center gap-4 sm:gap-6 md:gap-8 mt-2">
                             {/* Day 1 */}
                             <div className="flex flex-col items-center group cursor-default">
-                                <h3 className="relative font-western text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-b from-[#f0e6d2] to-[#c5a059] drop-shadow-lg leading-none transition-transform duration-300 group-hover:-translate-y-2">
+                                <h3 className="relative font-western text-5xl sm:text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-b from-[#f0e6d2] to-[#c5a059] drop-shadow-lg leading-none transition-transform duration-300 group-hover:-translate-y-2">
                                     23
-                                    <span className="absolute -top-2 -right-6 text-xl md:text-2xl font-oriental text-desi-gold tracking-normal">rd</span>
+                                    <span className="absolute -top-1 -right-4 sm:-top-2 sm:-right-6 text-base sm:text-xl md:text-2xl font-oriental text-desi-gold tracking-normal">rd</span>
                                 </h3>
                                 <div className="h-[2px] w-0 group-hover:w-full bg-desi-gold transition-all duration-300 mt-2"></div>
                             </div>
 
                             {/* Divider */}
-                            <div className="h-16 w-[1px] bg-gradient-to-b from-transparent via-desi-gold/50 to-transparent rotate-12 mx-2"></div>
+                            <div className="h-12 sm:h-16 w-[1px] bg-gradient-to-b from-transparent via-desi-gold/50 to-transparent rotate-12 mx-1 sm:mx-2"></div>
 
                             {/* Day 2 */}
                             <div className="flex flex-col items-center group cursor-default">
-                                <h3 className="relative font-western text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-b from-[#f0e6d2] to-[#c5a059] drop-shadow-lg leading-none transition-transform duration-300 group-hover:-translate-y-2">
+                                <h3 className="relative font-western text-5xl sm:text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-b from-[#f0e6d2] to-[#c5a059] drop-shadow-lg leading-none transition-transform duration-300 group-hover:-translate-y-2">
                                     24
-                                    <span className="absolute -top-2 -right-6 text-xl md:text-2xl font-oriental text-desi-gold tracking-normal">th</span>
+                                    <span className="absolute -top-1 -right-4 sm:-top-2 sm:-right-6 text-base sm:text-xl md:text-2xl font-oriental text-desi-gold tracking-normal">th</span>
                                 </h3>
                                 <div className="h-[2px] w-0 group-hover:w-full bg-desi-gold transition-all duration-300 mt-2"></div>
                             </div>
@@ -198,7 +202,7 @@ const Hero = () => {
                         whileHover="hover"
                         whileTap="tap"
                         initial="initial"
-                        className="relative w-64 h-24 md:w-80 md:h-32 flex items-center justify-center group"
+                        className="relative w-32 h-14 sm:w-56 sm:h-20 md:w-80 md:h-32 flex items-center justify-center group"
                     >
                         {/* 1. Base Dark Layer */}
                         <img
@@ -251,7 +255,7 @@ const Hero = () => {
 
                         {/* 4. Text Overlay (Restored simple style) */}
                         <motion.span
-                            className="relative z-30 font-tech text-white text-2xl md:text-3xl tracking-widest drop-shadow-md select-none flex gap-2"
+                            className="relative z-30 font-tech text-white text-sm sm:text-xl md:text-3xl tracking-widest drop-shadow-md select-none flex gap-2"
                             variants={{
                                 hover: { scale: 1.1, textShadow: "0 0 15px rgba(255,215,0,0.8)" },
                                 tap: { scale: 0.95 }

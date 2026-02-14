@@ -35,9 +35,9 @@ const Footer = () => {
                         </p>
 
                         {/* Email Button - Red */}
-                        <a href="mailto:esummit@mait.ac.in" className="inline-flex items-center gap-3 bg-[#c41e3a] hover:bg-[#a01830] text-white px-6 py-3 rounded-lg transition-all duration-300 shadow-lg group">
-                            <Mail size={20} className="group-hover:scale-110 transition-transform" />
-                            <span className="font-display tracking-wider pt-0.5">esummit@mait.ac.in</span>
+                        <a href="mailto:esummit@mait.ac.in" className="inline-flex items-center gap-2 sm:gap-3 bg-[#c41e3a] hover:bg-[#a01830] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-all duration-300 shadow-lg group">
+                            <Mail size={18} className="group-hover:scale-110 transition-transform flex-shrink-0" />
+                            <span className="font-display tracking-wider pt-0.5 text-xs sm:text-sm md:text-base break-all">esummit@mait.ac.in</span>
                         </a>
 
                         {/* Made with Love */}
@@ -84,8 +84,6 @@ const Footer = () => {
                                         <span>WhatsApp</span>
                                     </a>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>

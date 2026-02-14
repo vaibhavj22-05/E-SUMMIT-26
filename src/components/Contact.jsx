@@ -42,7 +42,7 @@ const Contact = () => {
                 {/* 3. Header Banner (Dark Sci-Fi Style) */}
                 <div className="relative mb-32 group">
                     <div className="relative z-10">
-                        <h2 className="text-5xl md:text-8xl font-display text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/80 tracking-widest drop-shadow-[0_0_35px_rgba(255,255,255,0.4)]">
+                        <h2 className="text-4xl sm:text-5xl md:text-8xl font-display text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/80 tracking-widest drop-shadow-[0_0_35px_rgba(255,255,255,0.4)]">
                             CONTACT US
                         </h2>
                         {/* Underline Glitch Effect */}
@@ -55,7 +55,7 @@ const Contact = () => {
                 </div>
 
                 {/* 4. Hanging/Floating Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-24 gap-x-8 w-full px-4 md:px-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 sm:gap-y-24 gap-x-6 sm:gap-x-8 w-full px-2 sm:px-4 md:px-12">
                     {team.map((member, index) => (
                         <div key={index} className="flex flex-col items-center relative group">
 

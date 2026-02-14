@@ -19,7 +19,7 @@ const About = () => {
             {/* Background Gradients */}
             <div className="absolute left-0 top-0 right-0 w-[500px] h-[500px] bg-retro-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none z-0"></div>
 
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10 px-4 sm:px-6">
                 {/* Left: Content */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -30,13 +30,13 @@ const About = () => {
                 >
                     <div className="relative">
                         <span className="text-retro-accent font-oriental tracking-widest text-sm uppercase mb-4 block pl-1">The Vision</span>
-                        <h2 className="text-6xl md:text-8xl font-display text-white leading-[0.9]">
+                        <h2 className="text-[15vw] sm:text-[10vw] md:text-8xl font-display text-white leading-[0.9]">
                             ABOUT <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-retro-primary via-retro-secondary to-retro-red">E-SUMMIT</span>
                         </h2>
                     </div>
 
-                    <p className="text-xl md:text-2xl font-body font-light text-gray-300 leading-relaxed">
+                    <p className="text-base sm:text-xl md:text-2xl font-body font-light text-gray-300 leading-relaxed">
                         E-Summit is the flagship entrepreneurship summit organized to promote <span className="text-white font-semibold">innovation</span>, <span className="text-white font-semibold">entrepreneurship</span>, and <span className="text-white font-semibold">leadership</span> among students and professionals.
                     </p>
 
@@ -56,7 +56,7 @@ const About = () => {
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="relative"
                 >
-                    <div className="aspect-[4/5] md:h-[500px] w-full rounded-[2.5rem] overflow-hidden relative border border-white/10 group shadow-2xl shadow-retro-primary/10">
+                    <div className="aspect-[3/4] sm:aspect-[4/5] md:h-[500px] w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden relative border border-white/10 group shadow-2xl shadow-retro-primary/10">
                         {/* Abstract Background */}
                         <div className="absolute inset-0 bg-[#0f0505]"></div>
 

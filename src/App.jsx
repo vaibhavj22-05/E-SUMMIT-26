@@ -18,7 +18,7 @@ const LoadingSpinner = () => (
 
 function App() {
   return (
-    <div className="relative bg-black min-h-screen text-white font-body selection:bg-retro-primary selection:text-white">
+    <div className="relative bg-black min-h-screen text-white font-body selection:bg-retro-primary selection:text-white pt-14 md:pt-0">
       {/* Global Grain Overlay */}
       <div className="grain-overlay fixed inset-0 pointer-events-none z-[100] opacity-20"></div>
 
